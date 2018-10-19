@@ -4,8 +4,8 @@
   "description": "Using Circleci to Run End to End Tests",
   "main": "index.js",
   "scripts": {
-    "start": "light-server -s app --port 3000",
-    "dev": "light-server -s app --port 3000 & wait-on http://localhost:3000",
+    "start": "node index.js",
+    "dev": "node index.js",
     "test": "npx cypress run"
   },
   "keywords": [],
@@ -15,6 +15,7 @@
     "cypress": "^2.1.0"
   },
   "dependencies": {
+    "express": "^4.16.4",
     "light-server": "^2.5.1",
     "wait-on": "^3.1.0"
   }

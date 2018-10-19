@@ -20,11 +20,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Setup Heroku
-          command: |
-            chmod +x .circleci/setup_heroku.sh
-            .circleci/setup_heroku.sh
-      - run:
           name: Deploy Master to Heroku
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$APP_NAME.git master
