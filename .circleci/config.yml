@@ -10,6 +10,7 @@ jobs:
         - v1-npm-deps-{{ checksum "package.json" }}
         - v1-npm-deps
     - run:
+        name: Install, run and test
         command: |
           npm install
           npm run dev
@@ -29,10 +30,6 @@ workflows:
   build_and_test_and_deploy:
     jobs:
     - build_and_test
-    - hold:
-        type: approval
-        requires:
-          - build_and_test
     - deploy:
         requires:
-          - hold
+          - build_and_test
