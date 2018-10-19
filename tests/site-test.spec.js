@@ -6,7 +6,7 @@ describe('PHP Travels Local Server Test', () => {
       .should('have.attr', 'src', `./images/phptravels-logo.png`)
     cy
       .get('h2')
-      .should('have.html', 'Application Test Drive.')
+      .should('have.html', 'Application Testing')
     cy
       .get('.dropdown-menu li')
       .contains('Demo')
